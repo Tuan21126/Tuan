@@ -44,40 +44,29 @@ public class PhongHocStorage {
 		}
 	
 	//DELETE xóa phòng học
-	void deletePhongHocLyThuyet(int id) {
-	    if (MemoryPhongHocDatabase.deletePhongHocLyThuyet(id)) {
-	        System.out.println("Xóa phòng học lý thuyết thành công");
-	    } else {
-	        System.out.println("Không tìm thấy phòng học lý thuyết với id: " + id);
-	    	}
+	boolean deletePhongHocLyThuyet(int id) {
+	    return MemoryPhongHocDatabase.deletePhongHocLyThuyet(id);
 		}
-	 void deletePhongHocMayTinh(int id) {
-	    if (MemoryPhongHocDatabase.deletePhongHocMayTinh(id)) {
-	     System.out.println("Xóa phòng học máy tính thành công");
-	    } else {
-	     System.out.println("Không tìm thấy phòng học máy tính với id: " + id);
-	    	}
-	 	}
-	  void deletePhongHocLyThuyet(int id) {
-	    if (MemoryPhongHocDatabase.deletePhongHocLyThuyet(id)) {
-	     System.out.println("Xóa phòng học lý thuyết thành công");
-	    } else {
-	    	System.out.println("Không tìm thấy phòng học lý thuyết với id: " + id);
-	    	}
-	  	}
-	  void deletePhongHocMayTinh(int id) {
-		  if (MemoryPhongHocDatabase.deletePhongHocMayTinh(id)) {
-			  System.out.println("Xóa phòng học máy tính thành công");
-		  } else {
-			  System.out.println("Không tìm thấy phòng học máy tính với id: " + id);
-		  	}
-	  	}
-	 void deletePhongHocThiNghiem(int id) {
-		 if (MemoryPhongHocDatabase.deletePhongHocThiNghiem(id)) {
-			 System.out.println("Xóa phòng học thí nghiệm thành công");
-		 } else {
-			 System.out.println("Không tìm thấy phòng học thí nghiệm với id: " + id);
-		 	}
-	 	}
-}
+	boolean deletePhongHocMayTinh(int id) {
+	    return MemoryPhongHocDatabase.deletePhongHocMayTinh(id);
+		}
+	boolean deletePhongHocThiNghiem(int id) {
+	    return MemoryPhongHocDatabase.deletePhongHocThiNghiem(id);
+		}
 
+	 
+	 //SELECT
+	 ArrayList<PhongHocLyThuyet> selectPhongHocLyThuyet() {
+		    return MemoryPhongHocDatabase.getPhongHocLyThuyet();
+		}
+
+		ArrayList<PhongHocMayTinh> selectPhongHocMayTinh() {
+		    return MemoryPhongHocDatabase.getPhongHocMayTinh();
+		}
+
+		ArrayList<PhongHocThiNghiem> selectPhongHocThiNghiem() {
+		    return MemoryPhongHocDatabase.getPhongHocThiNghiem();
+		}
+
+}
+	
